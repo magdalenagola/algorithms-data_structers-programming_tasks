@@ -18,5 +18,8 @@ class QuickSortTest {
         assertIterableEquals(Arrays.asList(1,2,3,4,5, 6), toSort);
     }
 
-
+    @Test
+    void shouldThrowIllegalArgumentExceptionWhenNullPassedAsAnArgument(){
+        assertThrows(IllegalArgumentException.class, () -> QuickSort.quickSort(null));
+    }
 }
