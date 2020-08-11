@@ -22,4 +22,14 @@ class QuickSortTest {
     void shouldThrowIllegalArgumentExceptionWhenNullPassedAsAnArgument(){
         assertThrows(IllegalArgumentException.class, () -> QuickSort.quickSort(null));
     }
+
+    @Test
+    void shouldSortDuplicatedElementsInList(){
+        //arrange
+        List<Integer> toSort = new ArrayList<>(Arrays.asList(5,2,6,6,5,2));
+        //act
+        QuickSort.quickSort(toSort);
+        //assert
+        assertIterableEquals(Arrays.asList(2,2,5,5,6,6), toSort);
+    }
 }
