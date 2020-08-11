@@ -32,4 +32,24 @@ class QuickSortTest {
         //assert
         assertIterableEquals(Arrays.asList(2,2,5,5,6,6), toSort);
     }
+
+    @Test
+    void shouldNotSortAnEmptyList(){
+        //arrange
+        List<Integer> toSort = new ArrayList<>();
+        //act
+        QuickSort.quickSort(toSort);
+        //assert
+        assertEquals(0, toSort.size());
+    }
+
+    @Test
+    void shouldNotSortOneItemList(){
+        //arrange
+        List<Integer> toSort = new ArrayList<>(Arrays.asList(1));
+        //act
+        QuickSort.quickSort(toSort);
+        //assert
+        assertIterableEquals(Arrays.asList(1), toSort);
+    }
 }
