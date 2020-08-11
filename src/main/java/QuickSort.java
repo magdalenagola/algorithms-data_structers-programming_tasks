@@ -9,7 +9,7 @@ class QuickSort {
      */
     static void quickSort(List<Integer> numbers) {
         if (numbers == null) throw new IllegalArgumentException();
-        if (numbers.isEmpty()) return;
+        if (numbers.size() <= 1) return;
         int scrollingIndex = 0;
         int positionIndex = 0;
         int pivotIndex = numbers.size() / 2;
