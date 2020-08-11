@@ -9,7 +9,7 @@ class QuickSort {
      */
     static void quickSort(List<Integer> numbers) {
         if (numbers == null) throw new IllegalArgumentException();
-        if (numbers.size() <= 1) return;
+        if (numbers.isEmpty()) return;
         int scrollingIndex = 0;
         int positionIndex = 0;
         int pivotIndex = numbers.size() / 2;
@@ -22,7 +22,7 @@ class QuickSort {
         //dividing collection into two parts, where the elements in the left partition are less or equal then all elements in the right partition;
         //partitions are divided by pivot
         Integer comparingElement;
-        for (; scrollingIndex < numbers.size() - 2; scrollingIndex++) {
+        for (; scrollingIndex < numbers.size() -  1; scrollingIndex++) {
             comparingElement = numbers.get(scrollingIndex);
             if (comparingElement > pivot) continue;
             numbers.set(scrollingIndex, numbers.get(positionIndex));
